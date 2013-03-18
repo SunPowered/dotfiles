@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/screen"]
 	path = .vim/bundle/screen
 	url = https://github.com/ervandew/screen.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
