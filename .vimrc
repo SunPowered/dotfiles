@@ -1,6 +1,7 @@
 " TvB Vimrc File
 
 filetype off
+set nocompatible	"use Vim defaults
 call pathogen#infect()
 syntax enable
 filetype plugin indent on
@@ -13,7 +14,6 @@ colorscheme kolor
 "  Automatically reload .vimrc when it is saved
 au BufWritePost .vimrc so ~/.vimrc
 
-set nocompatible	"use Vim defaults
 set ls=2		"always show status line
 set number		"show line numbers
 set title		"show title in console
