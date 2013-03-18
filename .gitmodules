@@ -1,9 +1,6 @@
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
+[submodule ".vim/bundle/pathogen"]
+	path = .vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/Vim-R-plugin"]
-	path = .vim/bundle/Vim-R-plugin
-	url = https://github.com/vim-scripts/Vim-R-plugin.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive
@@ -31,8 +28,8 @@
 [submodule ".vim/bundle/kolor"]
 	path = .vim/bundle/kolor
 	url = https://github.com/zeis/vim-kolor.git
-[submodule "vim-pandoc"]
-	path = vim-pandoc
+[submodule ".vim/bundle/pandoc"]
+	path = .vim/bundle/pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
