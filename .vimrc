@@ -19,8 +19,6 @@ set number		"show line numbers
 set title		"show title in console
 set ruler		"show the cursor position always
 
-set foldmethod=indent	"Folding python blocks through indentation"
-set foldlevel=99	"Go up to 99 levels deep"
 set tabstop=4		"number of spaces in tab character
 set shiftwidth=4	"number of spaces to indent
 set scrolloff=3		"keep lines while scrolling
@@ -62,12 +60,28 @@ noremap <leader>d dd
 noremap <leader>c ddO
 
 " SuperTab completion
-let g:SuperTabDefaultCompletionType = "context"
 
+" Python specific
+autocmd FileType python set foldmethod=indent	"Folding python blocks through indentation"
+autocmd FileType python set foldlevel=99	"Go up to 99 levels deep"
+autocmd FileType python map <leader>td <Plug>TaskList
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python let g:SuperTabDefaultCompletionType = "context"
+
+py << EOF
+import os.path
+import sys
+import vim
+if "VIRTUAL_ENV" in os.environ:
+	project_base_dir = os.environ["VIRTUAL_ENV"]
+	sys.path.insert(0, project_base_dir)
+	activate_this = os.path.join(project_base_dir, "bin/activate_this.py")
+	execfile(activate_this, dict(__file__=activate_this))
+EOF
 " NERDTree
 " cd ~/.vim/bundle
 " git clone https://github.com/scrooloose/nerdtree.git
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 hi Directory ctermfg=red
 
 " MiniBuffExplorer
