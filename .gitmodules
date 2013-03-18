@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/kolor"]
 	path = .vim/bundle/kolor
 	url = https://github.com/zeis/vim-kolor.git
+[submodule "vim-pandoc"]
+	path = vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
