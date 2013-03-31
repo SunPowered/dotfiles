@@ -3,7 +3,7 @@ update:
 	git submodule foreach git pull origin
 	git commit -a -m "Auto updated submodules"
 
-init:
+iit:
 	git submodule update --init
 
 install:
