@@ -52,3 +52,9 @@ bindkey '^N' history-search-forward
 # Tmuxinator window naming fix
 export DISABLE_AUTO_TITLE=true
 
+# Custom Aliases
+alias ll='ls -al'
+
+# If Local zsh config is present, source it, add any system specific zsh config to this file
+LOCAL_ZSH_CONFIG=$HOME/.zshrc_local
+test -f $LOCAL_ZSH_CONFIG && source $LOCAL_ZSH_CONFIG
