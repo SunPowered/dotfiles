@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/kolor"]
 	path = .vim/bundle/kolor
 	url = https://github.com/zeis/vim-kolor.git
-[submodule ".vim/bundle/pandoc"]
-	path = .vim/bundle/pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc.git
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
