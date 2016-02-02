@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/R-plugin"]
 	path = .vim/bundle/R-plugin
 	url = https://github.com/vim-scripts/Vim-R-plugin.git
+[submodule ".vim/bundle/pandoc"]
+	path = .vim/bundle/pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
