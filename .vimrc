@@ -2,14 +2,14 @@
 
 filetype off
 set nocompatible	"use Vim defaults
-call pathogen#infect()
 syntax enable
 filetype plugin indent on
 
 let mapleader = ","	"Remap the leader to ','
 let maplocalleader = "-" 
 
-colorscheme kolor
+" FIXME: Find a nice color scheme  
+" colorscheme kolor
 
 "  Automatically reload .vimrc when it is saved
 au BufWritePost .vimrc so ~/.vimrc
@@ -29,7 +29,7 @@ set incsearch		"incremental searching
 
 set nobackup		"do not keep a backup file
 set ttyfast		"smoother changes
-set noswapfile	"Disable swap files
+set noswapfile	i	"Disable swap files
 
 " Map Ctrl+<direction> to the window operations
 map <C-j> <C-w>j
@@ -78,14 +78,10 @@ if "VIRTUAL_ENV" in os.environ:
 	activate_this = os.path.join(project_base_dir, "bin/activate_this.py")
 	execfile(activate_this, dict(__file__=activate_this))
 EOF
-" NERDTree
-" cd ~/.vim/bundle
-" git clone https://github.com/scrooloose/nerdtree.git
-map <leader>n :NERDTreeToggle<CR>
 hi Directory ctermfg=red
 
 " MiniBuffExplorer
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+" let g:miniBufExplMapWindowNavVim = 1
+" let g:miniBufExplMapWindowNavArrows = 1
+" let g:miniBufExplMapCTabSwitchBufs = 1
+" let g:miniBufExplModSelTarget = 1
