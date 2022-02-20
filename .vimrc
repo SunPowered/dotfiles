@@ -1,9 +1,9 @@
 " TvB Vimrc File
 
-filetype off
+" filetype off
 set nocompatible	"use Vim defaults
-syntax enable
-filetype plugin indent on
+" syntax enable
+" filetype plugin indent on
 
 let mapleader = ","	"Remap the leader to ','
 let maplocalleader = "-" 
@@ -29,7 +29,7 @@ set incsearch		"incremental searching
 
 set nobackup		"do not keep a backup file
 set ttyfast		"smoother changes
-set noswapfile	i	"Disable swap files
+" set noswapfile	i	"Disable swap files
 
 " Map Ctrl+<direction> to the window operations
 map <C-j> <C-w>j
@@ -67,18 +67,26 @@ autocmd FileType python set foldlevel=99	"Go up to 99 levels deep"
 autocmd FileType python map <leader>td <Plug>TaskList
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python let g:SuperTabDefaultCompletionType = "context"
-
-py << EOF
-import os.path
-import sys
-import vim
-if "VIRTUAL_ENV" in os.environ:
-	project_base_dir = os.environ["VIRTUAL_ENV"]
-	sys.path.insert(0, project_base_dir)
-	activate_this = os.path.join(project_base_dir, "bin/activate_this.py")
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
 hi Directory ctermfg=red
+
+" Setup vim-plug package manager
+"
+" Autoinstall vim-plug if it doesnt exist
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Include all personal plugins here, vim-plug will keep them updated
+call plug#begin()
+" https://github.com/junegunn/vim-plug#example
+" Note: You can set a custom plugin directory by passing it to the #begin()
+" function
+"   Default will be ~/.vim/plugged
+
+" Init plugin system
+call plug#end()
 
 " MiniBuffExplorer
 " let g:miniBufExplMapWindowNavVim = 1
